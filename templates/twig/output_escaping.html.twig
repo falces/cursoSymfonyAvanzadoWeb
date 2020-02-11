@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<p>Hola {{ nombre }}</p>
+
+<p>Código escapado {{ script }}</p>
+
+<p>Código sin escapar, se ejecuta {{ script|raw }}</p>
+
+{% dump nombre %}
+
+{{ dump(nombre) }}
+
+{% endblock %}

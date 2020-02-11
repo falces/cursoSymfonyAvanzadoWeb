@@ -1,0 +1,8 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<p>El precio es {{ price|priceFormat }}</p>
+<p>El precio es {{ price|priceFormat(2,'.',',') }}</p>
+
+{% endblock %}

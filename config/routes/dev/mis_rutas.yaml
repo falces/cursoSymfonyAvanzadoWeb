@@ -36,3 +36,22 @@ otra:
 generate_url:
   path: /generate_url
   defaults: { _controller: App\Controller\RoutingController::generarURL }
+
+output_escaping:
+  path: /output_escaping
+  defaults: { _controller: App\Controller\TwigController::outputEscaping }
+
+output_format:
+  path: /output_format/{_slug}/{_format}
+  defaults: { _controller: App\Controller\TwigController::showFormat }
+
+article_detail:
+  path: /article/{_locale}/{_year}/{_slug}.{_format}
+  defaults: { _controller: App\Controller\BlogController::articleDetail, _format: html }
+  requirements:
+    _locale:  es|en|fr
+    _format: html|rss
+
+price:
+  path: /price
+  controller: App\Controller\TwigController::price
