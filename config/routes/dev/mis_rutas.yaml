@@ -55,3 +55,7 @@ article_detail:
 price:
   path: /price
   controller: App\Controller\TwigController::price
+
+productos:
+  path: /productos
+  controller: App\Controller\ProductosController::index
