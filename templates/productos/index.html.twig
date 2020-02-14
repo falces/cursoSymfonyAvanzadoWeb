@@ -4,7 +4,9 @@
 
 {% block body %}
     <h1>Productos index</h1>
-
+	{% for mensaje in app.flashes('avisos') %}
+	<div style="color: red">{{ mensaje }}</div>
+	{% endfor %}
     <table class="table">
         <thead>
             <tr>

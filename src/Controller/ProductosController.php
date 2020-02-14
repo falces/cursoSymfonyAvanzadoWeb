@@ -20,6 +20,7 @@ class ProductosController extends AbstractController
      */
     public function index(ProductosRepository $productosRepository): Response
     {
+		// Ejemplo depuración: dump($productosRepository->findAll());
         return $this->render('productos/index.html.twig', [
             'productos' => $productosRepository->findAll(),
         ]);
@@ -37,7 +38,9 @@ class ProductosController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($producto);
-            $entityManager->flush();
+			$entityManager->flush();
+
+			$this->addFlash('avisos', 'El producto se ha almacenado correctamente.');
 
             return $this->redirectToRoute('productos_index');
         }
